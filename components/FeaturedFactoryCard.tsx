@@ -8,9 +8,9 @@ import elipse from "@/assets/icons/Ellipse 9.png";
 import Image from "next/image";
 export function FeaturedFactoryCard({ name, cover, thumbs }: Props) {
   return (
-    <div className="bg-white rounded-xl p-3 shadow">
+    <div className="  ">
       <div className="flex gap-3 mb-3">
-        <Image src={elipse} alt="Elipse" />
+        <Image src={elipse} alt="Elipse" className="h-14 w-14" />
 
         <div className="flex flex-col">
           <h3 className="font-semibold">{name}</h3>
@@ -19,14 +19,14 @@ export function FeaturedFactoryCard({ name, cover, thumbs }: Props) {
         </div>
       </div>
 
-      <img src={cover} className="rounded-lg h-52 w-full object-cover" />
-      <div className="grid grid-cols-2 gap-2 mt-2">
+      <img src={cover} className=" w-135 h-56" />
+      <div className="grid grid-cols-2 gap-2 mt-3">
         {thumbs.map((img, i) => (
-          <div key={i} className="h-40 overflow-hidden rounded">
+          <div key={i} >
             <img
               src={img}
               alt=""
-              className="w-full h-full object-cover block"
+              className="w-full h-36 rounded-[12px]"
             />
           </div>
         ))}

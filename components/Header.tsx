@@ -10,56 +10,58 @@ import {
   User,
 } from "lucide-react";
 import Image from "next/image";
-
+import bellImg from "@/assets/images/Mensagem e notificações.png";
 import { useState } from "react";
 import { X } from "lucide-react";
+import LanguageSelect from "./LanguageSelect";
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <div className="flex flex-col bg-gradient-to-r from-blue-600 to-cyan-700 relative">
+    <div className="flex flex-col bg-linear-230 from-[#002879] to-[#1976D2] relative">
       <header className="text-white px-4 md:px-8 lg:px-20 py-4">
         {/* Topo */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-5">
           <Image src={logo} alt="logo" className="w-36 md:w-auto" />
 
-          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-5">
-            <button className="flex items-center gap-2 text-sm">
-              🇦🇴 Português
+          <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+            <LanguageSelect />
+            <Image
+              src={bellImg}
+              alt="bellImg"
+              className="h-7 w-20 opacity-80"
+            />
+            <button className="w-8 h-7 rounded-full opacity-80 border border-white/40 flex items-center justify-center">
+              <User className="" size={16} />
             </button>
-
-            <span className="rounded-full p-2 gap-2 border border-white/20 flex items-center justify-center">
-              <button>
-                <MessageCircle size={18} />
-              </button>
-
-              <button>
-                <Bell size={18} />
-              </button>
-            </span>
-
-            <button className="w-9 h-9 rounded-full border border-white/40 flex items-center justify-center">
-              <CircleUser size={18} />
-            </button>
-
             <button className="text-sm">Entrar</button>
           </div>
         </div>
         {/* Desktop */}
-        <div className="hidden lg:flex items-center gap-8">
-          <button className="flex items-center gap-2">
-            <Image src={bars} alt="bars" />
-            <span>Todas as categorias</span>
-          </button>
+        <div className="hidden lg:px-4 lg:flex justify-between my-4 items-center gap-8">
+          <span className="flex gap-5">
+            <button className="flex items-center gap-2">
+              <Image src={bars} alt="bars" />
+              <span>Todas as categorias</span>
+            </button>
 
-          <a href="#">Central de Fábrica</a>
+            <a href="#">Central de Fábrica</a>
 
-          <a href="#">Central de Grossista</a>
+            <a href="#">Central de Grossista</a>
 
-          <a href="#">Central de Ajuda</a>
+            <a href="#">Central de Ajuda</a>
+          </span>
+
+          <span className="flex gap-5 ">
+            <a href="#">Tornar-se Membro</a>
+            <a href="#">Cadastrar como Fabrica</a>
+          </span>
         </div>
 
         {/* Mobile */}
-        <button className="lg:hidden absolute top-4  right-4 opacity-80" onClick={() => setOpenMenu(true)}>
+        <button
+          className="lg:hidden absolute top-4  right-4 opacity-80"
+          onClick={() => setOpenMenu(true)}
+        >
           <Menu size={28} />
         </button>
       </header>
@@ -74,7 +76,6 @@ export default function Header() {
   `}
       />
 
-      {/* Menu */}
       <div
         className={`
     fixed
@@ -119,28 +120,33 @@ export default function Header() {
       </div>
 
       {/* Espaço para a search bar */}
-      <div className="h-24 md:h-20"></div>
+      <div className="h-25 md:h-20"></div>
 
       {/* Busca */}
       <div
         className="
       bg-white
       shadow-lg
-      px-4
-      md:px-8
-      py-4
+      px-5
+      md:px-5
+      py-6
       rounded-xl
 
       w-[95%]
       md:w-[85%]
-      lg:w-[70%]
+      lg:w-[90%]
+
 
       absolute
       left-1/2
       -translate-x-1/2
-      -bottom-10
+      lg:-bottom-15
+      mt-40
     "
       >
+        <div>
+          <p className="text-gray-600">Área de pesquisa</p>
+        </div>
         <div
           className="
       flex
@@ -155,16 +161,16 @@ export default function Header() {
             className="
           flex-1
           outline-none
-          text-gray-700
+          text-gray-700 placeholder:text-sm
           py-3
         "
           />
-
           <button
             className="
-          bg-gradient-to-r
-          from-green-600
-          to-cyan-500
+
+            bg-linear-100
+          from-[#5FC099]
+          to-[#4294D0]
 
           text-white
 
