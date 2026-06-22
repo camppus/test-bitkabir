@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <div className="flex flex-col bg-linear-230 from-[#002879] to-[#1976D2] relative">
       <header className="text-white px-4 md:px-8 lg:px-20 py-4">
-        {/* Topo */}
+      
         <div className="flex flex-col md:flex-row items-center justify-between gap-5">
           <Image src={logo} alt="logo" className="w-36 md:w-auto" />
 
@@ -36,7 +36,7 @@ export default function Header() {
             <button className="text-sm">Entrar</button>
           </div>
         </div>
-        {/* Desktop */}
+        
         <div className="hidden lg:px-4 lg:flex justify-between my-4 items-center gap-8">
           <span className="flex gap-5">
             <button className="flex items-center gap-2">
@@ -57,7 +57,7 @@ export default function Header() {
           </span>
         </div>
 
-        {/* Mobile */}
+        
         <button
           className="lg:hidden absolute top-4  right-4 opacity-80"
           onClick={() => setOpenMenu(true)}
@@ -119,10 +119,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Espaço para a search bar */}
+      
       <div className="h-25 md:h-20"></div>
 
-      {/* Busca */}
+      
       <div
         className="
       bg-white
